@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Склад-трекер — Бани-бочки MVP</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">📦 Склад-трекер <span class="brand-sub">без QR-камеры (код вручную)</span></div>
+  </header>
+
+  <main id="app">
+    <nav class="tabs" id="main-tabs">
+      <button class="tab active" data-tab="materials">Материалы</button>
+      <button class="tab" data-tab="movement">Новое движение</button>
+      <button class="tab" data-tab="log">Журнал</button>
+      <button class="tab" data-tab="inventory">Инвентаризация</button>
+    </nav>
+
+    <section id="tab-materials" class="panel">
+      <div id="materials-list" class="task-list"></div>
+    </section>
+
+    <section id="tab-movement" class="panel hidden">
+      <div class="card form">
+        <h3>Зафиксировать движение</h3>
+        <label>Материал (код или название)
+          <select id="mv-material"></select>
+        </label>
+        <label>Тип операции
+          <select id="mv-type">
+            <option value="приход">Приход</option>
+            <option value="выдача">Выдача в производство</option>
+            <option value="перемещение">Перемещение между постами</option>
+            <option value="возврат">Возврат</option>
+            <option value="списание">Списание / брак</option>
+          </select>
+        </label>
+        <label>Количество<input id="mv-qty" type="number" min="0" step="0.01" /></label>
+        <div class="grid-2" id="mv-posts">
+          <label>Откуда (пост)<input id="mv-from" type="text" placeholder="Склад" /></label>
+          <label>Куда (пост)<input id="mv-to" type="text" placeholder="Цех сборки" /></label>
+        </div>
+        <label>Комментарий<textarea id="mv-comment" rows="2"></textarea></label>
+        <button class="btn primary" id="mv-submit">Зафиксировать</button>
+        <div class="error" id="mv-error"></div>
+      </div>
+    </section>
+
+    <section id="tab-log" class="panel hidden">
+      <div class="filters" id="log-filters">
+        <button class="filter active" data-type="">Все</button>
+        <button class="filter" data-type="приход">Приход</button>
+        <button class="filter" data-type="выдача">Выдача</button>
+        <button class="filter" data-type="перемещение">Перемещение</button>
+        <button class="filter" data-type="возврат">Возврат</button>
+        <button class="filter" data-type="списание">Списание</button>
+        <button class="filter" data-type="корректировка">Корректировка</button>
+      </div>
+      <a class="btn" href="/api/export.csv" download>⬇ Экспорт в CSV</a>
+      <div id="log-list" class="task-list" style="margin-top:14px"></div>
+    </section>
+
+    <section id="tab-inventory" class="panel hidden">
+      <div class="card form">
+        <h3>Провести инвентаризацию</h3>
+        <label>Материал
+          <select id="inv-material"></select>
+        </label>
+        <label>Фактическое количество<input id="inv-fact" type="number" min="0" step="0.01" /></label>
+        <label>Комментарий<textarea id="inv-comment" rows="2"></textarea></label>
+        <button class="btn primary" id="inv-submit">Провести проверку</button>
+        <div class="error" id="inv-error"></div>
+      </div>
+      <div class="section-title">История инвентаризаций</div>
+      <div id="inventory-list" class="task-list"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

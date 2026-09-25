@@ -1,0 +1,101 @@
+{
+  "materials": [
+    {
+      "id": "m1",
+      "code": "DOSKA-40",
+      "name": "Доска обрезная 40мм",
+      "unit": "м³",
+      "stock": 15,
+      "minStock": 5
+    },
+    {
+      "id": "m2",
+      "code": "BRUS-100",
+      "name": "Брус 100x100",
+      "unit": "м³",
+      "stock": 3,
+      "minStock": 4
+    },
+    {
+      "id": "m3",
+      "code": "UTEP-50",
+      "name": "Утеплитель базальтовый 50мм",
+      "unit": "уп",
+      "stock": 20,
+      "minStock": 8
+    },
+    {
+      "id": "m4",
+      "code": "GVOZD-100",
+      "name": "Гвозди 100мм",
+      "unit": "кг",
+      "stock": 15,
+      "minStock": 10
+    },
+    {
+      "id": "m5",
+      "code": "VAGONKA-OL",
+      "name": "Вагонка ольха",
+      "unit": "м²",
+      "stock": 6,
+      "minStock": 6
+    }
+  ],
+  "movements": [
+    {
+      "id": "72aac05f-e6af-4b3e-9202-3c58c6a405f8",
+      "materialId": "m1",
+      "materialCode": "DOSKA-40",
+      "materialName": "Доска обрезная 40мм",
+      "type": "приход",
+      "qty": 5,
+      "unit": "м³",
+      "fromPost": "",
+      "toPost": "",
+      "comment": "Поставка от поставщика ЛесТрейд",
+      "stockAfter": 17,
+      "createdAt": "2026-09-25T15:13:21.529Z"
+    },
+    {
+      "id": "75507297-0b50-4cbc-9dd3-a1244db022f9",
+      "materialId": "m2",
+      "materialCode": "BRUS-100",
+      "materialName": "Брус 100x100",
+      "type": "перемещение",
+      "qty": 2,
+      "unit": "м³",
+      "fromPost": "Склад",
+      "toPost": "Цех сборки",
+      "comment": "",
+      "stockAfter": 3,
+      "createdAt": "2026-09-25T15:15:28.435Z"
+    },
+    {
+      "id": "36f20283-3477-4cd3-809f-8b61be894ff1",
+      "materialId": "m1",
+      "materialCode": "DOSKA-40",
+      "materialName": "Доска обрезная 40мм",
+      "type": "корректировка",
+      "qty": 2,
+      "unit": "м³",
+      "fromPost": "",
+      "toPost": "",
+      "comment": "Корректировка по итогам инвентаризации (недостача)",
+      "stockAfter": 15,
+      "createdAt": "2026-09-25T15:16:24.950Z"
+    }
+  ],
+  "inventory": [
+    {
+      "id": "253aecb8-b075-441d-b332-8dbf08ba91f4",
+      "materialId": "m1",
+      "materialCode": "DOSKA-40",
+      "materialName": "Доска обрезная 40мм",
+      "systemQty": 17,
+      "factQty": 15,
+      "diff": -2,
+      "comment": "Плановая сверка за сентябрь",
+      "createdAt": "2026-09-25T15:16:24.950Z"
+    }
+  ]
+}
