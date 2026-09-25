@@ -1,5 +1,8 @@
 # Склад-трекер — MVP (QR-инвентаризация)
 
+**Живой демо:** https://qr-sklad-tracker-production.up.railway.app
+**GitHub:** https://github.com/valentinlee/qr-sklad-tracker
+
 Учебный MVP по кейсу [kwork.ru/projects/3257860](https://kwork.ru/projects/3257860) —
 складской учёт материалов для производства бань-бочек: приход, выдача, перемещения между
 постами, возвраты, списания и инвентаризация. Полное ТЗ — `info/tz.md`.
